@@ -23,12 +23,11 @@ def fetch_vm_network_info():
         mac_address  = virtio[1]
 
         all_mac_addresses[vm_id] = mac_address
+    with open('ali_VMs_MAC_Adresses.json','w') as file: 
+        json.dump(all_mac_addresses,file,indent=4)  
+    print(json.dumps(all_mac_addresses))
 
-    return all_mac_addresses
-    
 
+fetch_vm_network_info() 
 
-
-result = fetch_vm_network_info()   
-print(json.dumps(result))
 #71b481ee-fdd6-4148-84e1-e9646a3a19b5
