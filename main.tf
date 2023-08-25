@@ -17,7 +17,7 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "Testing-Server-2" {
-    
+    count = 2
     target_node = "ali"
     clone = "new"
     full_clone = true
